@@ -1,0 +1,96 @@
+{
+    "type": "bundle",
+    "id": "bundle--5004dfba-147f-4547-9697-8264b5685bb1",
+    "objects": [
+        {
+            "type": "malware",
+            "spec_version": "2.1",
+            "id": "malware--870dcaf5-301a-41aa-9471-c4a8690ede55",
+            "created": "2021-08-06T09:40:37.184366Z",
+            "modified": "2021-08-06T09:40:37.184366Z",
+            "name": "Poison Ivy",
+            "description": "When installed, it allows the  virus to control the infected computer. It then opens  a backdoor to allow the virus in. When in control,  Poison Ivy can record or manipulate the computer or activate the webcam and speaker to record audio  and video.",
+            "malware_types": [
+                "remote-access-trojan"
+            ],
+            "is_family": false,
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mand-attack-lifecycle-model",
+                    "phase_name": "initial-compromise"
+                }
+            ],
+            "implementation_languages": [
+                "Assembly"
+            ],
+            "capabilities": [
+                "Steals authentication credentials"
+            ],
+            "sha256_hash": [
+                "ef537f25c895bfa782526529a9b63d97aa631564d5d789c2b765448c8635fb6c"
+            ]
+        },
+        {
+            "type": "threat-actor",
+            "spec_version": "2.1",
+            "id": "threat-actor--ffeda6d4-afe8-4c4a-ab41-72f830eca272",
+            "created": "2021-08-06T09:40:56.919294Z",
+            "modified": "2021-08-06T09:40:56.919294Z",
+            "name": "Ron Aldo",
+            "description": "Uses spear phishing attacks to deliver remote access malware to its targets",
+            "threat_actor_types": [
+                "spy",
+                "criminal"
+            ],
+            "aliases": [
+                "Uncatchable"
+            ],
+            "first_seen": "2015-05-07T14:22:14.76Z",
+            "goals": [
+                "Steal private files"
+            ],
+            "sophistication": "expert",
+            "resource_level": "individual"
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--d5ed306f-1e19-4bf6-bc10-b15bead5e711",
+            "created": "2021-08-06T09:40:43.834151Z",
+            "modified": "2021-08-06T09:40:43.834151Z",
+            "name": "Spear Phishing",
+            "external_references": [
+                {
+                    "source_name": "CAPEC",
+                    "url": "https://capec.mitre.org/data/definitions/98.html"
+                }
+            ],
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mand-attack-lifecycle-model",
+                    "phase_name": "initial-compromise"
+                }
+            ]
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ea9ded98-8214-4709-8a50-64f14bfa3a98",
+            "created": "2021-08-06T09:55:20.843806Z",
+            "modified": "2021-08-06T09:55:20.843806Z",
+            "relationship_type": "uses",
+            "source_ref": "threat-actor--ffeda6d4-afe8-4c4a-ab41-72f830eca272",
+            "target_ref": "malware--870dcaf5-301a-41aa-9471-c4a8690ede55"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--feae4a7d-239e-4b65-8128-1da25b36f9be",
+            "created": "2021-08-06T09:55:20.843806Z",
+            "modified": "2021-08-06T09:55:20.843806Z",
+            "relationship_type": "uses",
+            "source_ref": "threat-actor--ffeda6d4-afe8-4c4a-ab41-72f830eca272",
+            "target_ref": "attack-pattern--d5ed306f-1e19-4bf6-bc10-b15bead5e711"
+        }
+    ]
+}
